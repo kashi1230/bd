@@ -5,6 +5,7 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:confetti/confetti.dart';
+import 'package:foryou/txtBuilder.dart';
 
 
 void main() {
@@ -127,14 +128,7 @@ class _BirthdayWishScreenState extends State<BirthdayWishScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  'Heartfelt Wishes',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
+                TextBuilder(text: "Heartfull Wishes",fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),
                 SizedBox(height: 10.0),
                 Expanded(
                   child: SingleChildScrollView(
@@ -165,7 +159,7 @@ class _BirthdayWishScreenState extends State<BirthdayWishScreen> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      val = false;
+                      val = !val;
                     });
                     Navigator.of(context).pop();
                   },
@@ -185,7 +179,8 @@ class _BirthdayWishScreenState extends State<BirthdayWishScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Happy Birthday!'),
+        title: TextBuilder(text: "For yoy",fontWeight: FontWeight.bold,),
+        centerTitle: true,
       ),
       body: Stack(
         children: [
